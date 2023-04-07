@@ -72,6 +72,38 @@ func sum1(number int) int {
 	return sum
 }
 
+func pointer() {
+	var a int = 2
+	fmt.Println("start:", &a)
+	var pa *int = &a
+	*pa = 3
+	fmt.Println(pa, *pa , &*pa, a, &a)
+}
+
+func arr() {
+	var arr1 [5]int
+	arr2 := [3]int{1,3,5}
+	arr3 := [...]int{2,4,6,8,10}
+	slice1 := arr3[2:4]
+	var grid [4][5]int
+
+	fmt.Println(arr1, arr2, arr3)
+	fmt.Println(grid)
+
+	for i := 0; i< len(arr3); i++ {
+		fmt.Println(arr3[i])
+	}
+	fmt.Println("---------------------------")
+	for i := range arr2 {
+		fmt.Println(i, arr2[i])
+	} 
+	fmt.Println("---------------------------")
+	for i, v := range grid {
+		fmt.Println(i, v)
+	}
+	fmt.Println(slice1)
+}
+
 func main() {
 	var s string  = "hello world" 
 	fmt.Println(s)
@@ -91,7 +123,8 @@ func main() {
 		sum1(10),
 	)
 	fmt.Println(sum1(5))
-	
+	pointer()
+	arr()
 }
 
 
